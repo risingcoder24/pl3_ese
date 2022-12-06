@@ -1,0 +1,83 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication</title>
+</head>
+<body>
+
+    <nav class="navbar background h-nav-resp">
+        <ul class="navList v-class-resp">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="signup.html">Sign Up</a></li>
+          <li><a href="signin.html">Sign In</a></li>
+          <li><a href="leave.html">Leave Form</a></li>
+        </ul>
+       
+        <div class="burger">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+      </nav>
+    
+    {% for message in messages %}
+    <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+     <strong>Message:</strong> {{message}}
+     <button type="button" class = "close" data-dismiss="alert" aria-label="Close">
+     <span aria-hidden="true">&times;</span>
+     </button>
+     </div>
+     {% endfor %}
+
+    
+    <h3 class="header" id="header">  Walchand College of Engineering, Sangli  </h3>
+    <div class="details" id="details">
+        Walchand College of Engineering is situated midway between Sangli and Miraj cities at Vishrambag, Sangli. The WCE campus is located on about 90 acres of land on southern side of Sangli ? Miraj road.
+
+        In 1947, the college made a modest beginning as New Engineering College, with a single program leading to B.E. (Civil) degree. In the year 1955, the College was renamed as Walchand College of Engineering as part of the new arrangements and pursuant to the Rehabilitation and Development Program mainly funded by Seth Walchand Hirachand Memorial Trust and the Government. The Government appointed an Ad Hoc Committee for conducting the college from May 1955, later replaced by the Administrative Council in 1956. The Ad Hoc Committee added two more degree programs in B.E. (Mechanical) and B.E. (Electrical) in 1955 with the intake of 20 each. Three Diploma programs also started in 1955 ? Civil (40 intake), Mechanical (20) and Electrical (20).
+       
+       Post Graduate programs in Civil, Mechanical and Electrical Engineering and Diploma program in Industrial Electronics were introduced in 1971. In 1986 the UG and PG programs in Electronics Engineering and UG program in Computer Science and Engineering were introduced. 
+       
+       PG program in CSE was introduced in 1997. In 2001, added B.E. program in Information Technology with an intake of 60 students. An additional intake of 30 students was also sanctioned for Computer Science & Engineering program, resulting in total intake of 390 students for all branches at UG level and 106 at PG level. As part of strategic planning, PG section is being strengthened and PG intake has now steadily risen to 240 across 10 programs. The College has a QIP scheme for full-time doctoral programs and also offers Ph. D. programs of Shivaji University in various branches of engineering. 
+    </div>
+    <br><br><br>
+
+    {% if user.is_authenticated %}
+    <h3>Hello {{fname}}</h3>
+
+    <button type="submit" class="btn" id="btn"> <a href="/signout"> SignOut</a></button>
+    
+    {% else %}
+    <button type="submit" class="btn" id="btn"> <a href="/signup">SignUp</a></button>
+    <button type="submit" class="btn" id="btn"> <a href="/signin"> SignIn </a></button>
+    {% endif %}
+
+    <style>
+
+        .header{
+            width: 50%;
+        
+            text-align: center;
+            color: brown;
+        }
+        .details{
+            width: 50%;
+            height: 50%;
+            text-align:left;
+        }
+
+        .btn{
+           align-items: center;
+        }
+        
+        body{
+            background-image: url('img_girl.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+    </style>
+</body>
+</html>

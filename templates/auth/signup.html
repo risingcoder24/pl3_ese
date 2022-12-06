@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Registration</title>
+</head>
+<body>
+    <h3>Sign Up</h3>
+    <form action="/signup" method="post">
+        {% csrf_token %}
+
+        <label for="">Username</label>
+        <input type="text" name="username" id="username", placeholder="create a username(only letters and numbers)" Required>
+        <br><br>
+        <label for="">First Name</label>
+        <input type="text" name="fname" id="fname", placeholder="Enter your first name" Required>
+        <br><br>
+        <label for="">Last Name</label>
+        <input type="text" name="lname" id="lname", placeholder="Enter your last name" Required>
+        <br><br>
+        <label for="">Email Address</label>
+        <input type="email" name="email" id="email", placeholder="Enter your email address" Required>
+        <br><br>
+        <label for="">Mobile Number</label>
+        <input type="Number" name="mob" id="mob", placeholder="Enter Mobile Number" Required>
+        <br><br>
+        <label for="">Department</label>
+        <input type="radio" id="html" name="html" value="Full Time">CSE
+        <input type="radio" id="html" name="html" value="Contractual">MECHANICAL
+        <input type="radio" id="html" name="html" value="Full Time">IT
+        <input type="radio" id="html" name="html" value="Contractual">ELECTRICAL
+        <br><br>
+        <label for="">Department Type</label>
+        <input type="radio" id="html" name="dep" value="Full Time">Full Time
+        <input type="radio" id="html" name="dep" value="Contractual">Contractual
+        <br><br>
+        <label for="">Password</label>
+        <input type="password" name="pass1" id="pass1", placeholder="create your password" Required>
+        <br><br>
+        <label for="">Confirm your password</label>
+        <input type="password" name="pass2" id="pass2", placeholder="Confirm your password" Required>
+        <br>br
+        <button type="submit">Sign Up</button>
+
+
+
+
+    </form>
+</body>
+</html>
